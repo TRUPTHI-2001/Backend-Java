@@ -1,0 +1,26 @@
+package backend;
+import java.util.*;
+import java.text.SimpleDateFormat;
+import java.text.ParseException;
+public class calender {
+
+	public static void main(String[] args) {
+		String before="2021-07-10";
+		System.out.println("date before" + before);
+		
+		SimpleDateFormat sdf=new SimpleDateFormat("yyyy-mm-dd");
+		
+		Calendar cal =Calendar.getInstance();
+		
+		try {
+			cal.setTime(sdf.parse(before));
+		}catch(ParseException e){
+			e.printStackTrace();
+		}
+		cal.add(Calendar.DAY_OF_MONTH, 3);
+		String after=sdf.format(cal.getTime());
+		System.out.println(after);
+
+	}
+
+}
